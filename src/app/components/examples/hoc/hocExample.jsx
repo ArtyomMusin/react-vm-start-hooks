@@ -13,6 +13,15 @@ const HOCExample = () => {
     const ComponentWithPropStyles = withPropsStyles(Component)
     const NewComponent = withPropsStyles(ComponentWithAuth)
     const SimpleComponent = withSimpleComponent(Component)
+
+    const onLogin = () => {
+        console.log('login')
+    }
+
+    const onLogOut = () => {
+        console.log('logout')
+    }
+
     return (
         <>
             <CardWrapper>
@@ -31,11 +40,11 @@ const HOCExample = () => {
             </CardWrapper>
             <CardWrapper>
                 <SmallTitle>4. Composed HOC</SmallTitle>
-                <NewComponent className="text-danger"/>
+                <NewComponent />
             </CardWrapper>
             <CardWrapper>
                 <SmallTitle>5. Home task</SmallTitle>
-                <SimpleComponent />
+                <SimpleComponent isAuth={localStorage.getItem('auth')} onLogin={onLogin} onLogOut={onLogOut} />
             </CardWrapper>
         </>
     )
