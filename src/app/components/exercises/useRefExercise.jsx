@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
-import CollapseWrapper from "../common/collapse";
-import Divider from "../common/divider";
+import React, { useRef } from 'react'
+import CollapseWrapper from '../common/collapse'
+import Divider from '../common/divider'
 const UseRefExercise = () => {
     const smallRef = useRef()
 
@@ -12,11 +12,11 @@ const UseRefExercise = () => {
 
     return (
         <CollapseWrapper title="Упражнение">
-            <Divider/>
+            <Divider />
             <p className="mt-3">
                 У вас есть блок, у которого заданы ширина и высота. Добавьте
                 кнопку, при нажатии которой изменятся следующие свойства:
-            </p>            
+            </p>
             <ul>
                 <li>Изменится содержимое блока на &quot;text&quot;</li>
                 <li>высота и ширина станут равны 150 и 80 соответственно</li>
@@ -26,15 +26,17 @@ const UseRefExercise = () => {
                 style={{
                     height: 40,
                     width: 60,
-                    color: "white"
+                    color: 'white'
                 }}
                 ref={smallRef}
             >
                 <small>Блок</small>
-                <button className="btn btn-secondary" onClick={changeSmall}>Изменить блок</button>
-            </div>            
+                <button className="btn btn-secondary" onClick={changeSmall}>
+                    Изменить блок
+                </button>
+            </div>
         </CollapseWrapper>
-    );
-};
+    )
+}
 
-export default UseRefExercise;
+export default UseRefExercise

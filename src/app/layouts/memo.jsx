@@ -1,14 +1,14 @@
-import React from "react";
-import CollapseWrapper from "../components/common/collapse";
-import CardWrapper from "../components/common/Card";
-import MemoWithUseCallbackExample from "../components/examples/memo/memoWithUseCallbackExample";
-import { Link } from "react-router-dom";
-import MemoDependencyFunctionExample from "../components/examples/memo/memoDependencyFunctionExample";
-import BlockQuoteWrapper from "../components/common/blockQuote";
-import Title from "../components/common/typografy/title";
-import Divider from "../components/common/divider";
-import Subtitle from "../components/common/typografy/subtitle";
-import SmallTitle from "../components/common/typografy/smallTitle";
+import React from 'react'
+import CollapseWrapper from '../components/common/collapse'
+import CardWrapper from '../components/common/Card'
+import MemoWithUseCallbackExample from '../components/examples/memo/memoWithUseCallbackExample'
+import { Link } from 'react-router-dom'
+import MemoDependencyFunctionExample from '../components/examples/memo/memoDependencyFunctionExample'
+import BlockQuoteWrapper from '../components/common/blockQuote'
+import Title from '../components/common/typografy/title'
+import Divider from '../components/common/divider'
+import Subtitle from '../components/common/typografy/subtitle'
+import SmallTitle from '../components/common/typografy/smallTitle'
 const MemoExample = () => {
     return (
         <>
@@ -49,7 +49,7 @@ const MemoExample = () => {
             </CollapseWrapper>
             <CardWrapper>
                 <i className="bi bi-lightbulb"></i> Если функциональный
-                компонент обёрнут в <code>React.memo</code> и использует{" "}
+                компонент обёрнут в <code>React.memo</code> и использует{' '}
                 <code>useState, useReducer или useContext</code>, он будет
                 повторно рендериться при изменении состояния или контекста.
             </CardWrapper>
@@ -64,15 +64,15 @@ const MemoExample = () => {
                 <MemoWithUseCallbackExample />
             </CardWrapper>
             <CardWrapper>
-                {" "}
+                {' '}
                 <SmallTitle>Memo dependency function</SmallTitle>
                 <CardWrapper>
                     <i className="bi bi-lightbulb"></i> Если функция для сверки
-                    не задана, то выполняется поверхностная сверка по{" "}
+                    не задана, то выполняется поверхностная сверка по{' '}
                     <Link
                         to={{
                             pathname:
-                                "https://github.com/facebook/react/blob/v16.8.6/packages/shared/shallowEqual.js"
+                                'https://github.com/facebook/react/blob/v16.8.6/packages/shared/shallowEqual.js'
                         }}
                         target="_blank"
                     >
@@ -82,7 +82,7 @@ const MemoExample = () => {
                 <MemoDependencyFunctionExample />
             </CardWrapper>
         </>
-    );
-};
+    )
+}
 
-export default MemoExample;
+export default MemoExample
