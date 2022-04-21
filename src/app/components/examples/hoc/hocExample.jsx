@@ -1,5 +1,6 @@
 import React from 'react'
 import Component from './someComponent'
+import ButtonComponent from './buttonComponent'
 
 import CardWrapper from '../../common/Card'
 import SmallTitle from '../../common/typografy/smallTitle'
@@ -12,7 +13,7 @@ const HOCExample = () => {
     const ComponentWithAuth = withLogin(Component)
     const ComponentWithPropStyles = withPropsStyles(Component)
     const NewComponent = withPropsStyles(ComponentWithAuth)
-    const SimpleComponent = withSimpleComponent(Component)
+    const SimpleComponent = withSimpleComponent(ButtonComponent)
 
     const onLogin = () => {
         console.log('login')
