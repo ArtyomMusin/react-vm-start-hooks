@@ -7,7 +7,7 @@ const withSimpleComponent = (Component) => {
         return (
             <CardWrapper>
                 {isAuth
-                    ? <Component name='Выйти из системы' clickFunc={onLogOut} />
+                    ? <Component name='Выйти из системы' clickFunc={onLogOut} classes={'btn-secondary'} />
                     : <Component name='Войти' clickFunc={onLogin} />
                 }
             </CardWrapper>

@@ -5,7 +5,7 @@ const UseRefExercise = () => {
     const smallRef = useRef()
 
     const changeSmall = () => {
-        smallRef.current.textContent = 'text'
+        smallRef.current.children[0].textContent = 'text'
         smallRef.current.style.width = '150px'
         smallRef.current.style.height = '80px'
     }
@@ -31,10 +31,10 @@ const UseRefExercise = () => {
                 ref={smallRef}
             >
                 <small>Блок</small>
-                <button className="btn btn-secondary" onClick={changeSmall}>
-                    Изменить блок
-                </button>
             </div>
+            <button className="btn btn-secondary my-4" onClick={changeSmall}>
+                Изменить блок
+            </button>
         </CollapseWrapper>
     )
 }

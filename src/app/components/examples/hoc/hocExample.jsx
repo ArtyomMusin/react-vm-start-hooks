@@ -1,27 +1,17 @@
 import React from 'react'
 import Component from './someComponent'
-import ButtonComponent from './buttonComponent'
 
 import CardWrapper from '../../common/Card'
 import SmallTitle from '../../common/typografy/smallTitle'
 import Divider from '../../common/divider'
+
 import withLogin from './withLogin'
 import withPropsStyles from './withPropsStyles'
-import withSimpleComponent from './withSimpleComponent'
 
 const HOCExample = () => {
     const ComponentWithAuth = withLogin(Component)
     const ComponentWithPropStyles = withPropsStyles(Component)
     const NewComponent = withPropsStyles(ComponentWithAuth)
-    const SimpleComponent = withSimpleComponent(ButtonComponent)
-
-    const onLogin = () => {
-        console.log('login')
-    }
-
-    const onLogOut = () => {
-        console.log('logout')
-    }
 
     return (
         <>
@@ -42,10 +32,6 @@ const HOCExample = () => {
             <CardWrapper>
                 <SmallTitle>4. Composed HOC</SmallTitle>
                 <NewComponent />
-            </CardWrapper>
-            <CardWrapper>
-                <SmallTitle>5. Home task</SmallTitle>
-                <SimpleComponent isAuth={localStorage.getItem('auth')} onLogin={onLogin} onLogOut={onLogOut} />
             </CardWrapper>
         </>
     )

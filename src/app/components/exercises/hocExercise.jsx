@@ -1,7 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CollapseWrapper from '../common/collapse'
+import ButtonComponent from '../examples/hoc/buttonComponent'
+import Divider from '../common/divider'
+
+import withSimpleComponent from './hocElements/withSimpleComponent'
 
 const HocExercise = () => {
+    const SimpleComponent = withSimpleComponent(ButtonComponent)
+
+    const [auth, setAuth] = useState(localStorage.getItem('auth'))
+    const authStatus = Boolean(auth)
+
+    const handleLogin = () => {
+        authStatus ? localStorage.removeItem('auth') : localStorage.setItem('auth', 'token')
+        setAuth(localStorage.getItem('auth'))
+    }
+
+    const onLogin = () => {
+        console.log('login')
+        handleLogin()
+    }
+
+    const onLogOut = () => {
+        console.log('logout')
+        handleLogin()
+    }
+
     return (
         <CollapseWrapper title="Упражнение">
             <p className="mt-3">
@@ -47,6 +71,8 @@ const HocExercise = () => {
                     <code>user</code> в <code>localStorage</code>
                 </li>
             </ul>
+            <Divider />
+            <SimpleComponent isAuth={authStatus} onLogin={onLogin} onLogOut={onLogOut} />
         </CollapseWrapper>
     )
 }
